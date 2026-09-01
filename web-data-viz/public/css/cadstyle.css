@@ -1,0 +1,369 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    overflow: hidden;
+    min-height: 100vh;
+    background-color: #1F1F1F;
+    background-image: url(../assets/imgs/blur.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-image: 
+        linear-gradient(#dddddd03 1px, transparent 1px),
+        linear-gradient(90deg, #dddddd03 1px, transparent 1px);
+        background-size: 1px 1px; */
+}
+
+
+.quadrados{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.union{
+    overflow: hidden;
+    position: relative;
+    height: 60vh;
+    animation: piscar .7s;
+
+    img{
+        height: 60vh;
+    }
+}
+
+.union-normal{
+    position: relative;
+    z-index: 1;
+    filter: brightness(70%);
+}
+
+.union-bright{
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    opacity: 0;
+    filter: brightness(400%);
+       mask-image: radial-gradient(
+        circle 100px at var(--mouse-x) var(--mouse-y),
+        white 50%,
+        transparent);
+         -webkit-mask-image: radial-gradient(
+        circle 100px at var(--mouse-x) var(--mouse-y),
+        white 50%,
+        transparent
+    );
+    pointer-events: none;
+}
+
+.union:hover .union-bright{
+    opacity: 1;
+}
+
+main{
+    z-index: 999;
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+.esquerda{
+    padding-left: 7vw;
+    padding-top: 7vh;
+}
+
+
+.seta{
+    padding-left: 0.5vw;
+    transition: .2s;
+    animation: seta .2s ease-out;
+}
+.seta:hover{
+    cursor: pointer;
+    img{
+        transform: scale(1.1);
+        transition: .2s ease-in-out;
+    }
+}
+
+.logo{
+    padding-top: 4vh;
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    img{
+        animation: surgir .2s;
+    }
+    .crypto{
+
+        font-family: 'manrope';
+        font-weight: 800;
+        font-size: 3rem;
+        color: white;
+        animation: surgir .35s;
+    }
+}
+
+.direita{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+<<<<<<< HEAD
+    justify-content: space-between;
+    padding: 5vh 0;
+
+=======
+    justify-content: center;
+    
+>>>>>>> 7141892ab47b9377382f539ec0783a395bb6e9ff
+    .titulo{
+        font-family: 'manrope';
+        font-size: 3rem;
+        font-weight: 800;
+        color: white;
+        animation: surgir .5s;
+    }
+    #bvindo{
+        font-size: 64px;
+    }
+}
+
+#titulo{
+    padding-bottom: 4vh;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+    gap: 1.6vh;
+    padding-bottom: 5vh;
+}
+
+.campos{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'manrope';
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    gap: 0.5vh;
+    .campo{
+        padding-left: 1vw;
+    }
+    input{
+        padding-left: 1vw;
+        outline: none;
+        border:2px solid #207F70 ;
+        border-radius: 18px;
+        background-color: #1F1F1F;
+        height: 6.5vh;
+        width: 35vw;
+        font-family: 'manrope';
+        font-size: 20px;
+        font-weight: 800;
+        color: white;
+    }
+    input:focus{
+        transition: .1s ease-in-out;
+        transform: scale(1.03);
+    }
+}
+
+.dir{
+    animation: daDireita .4s ease-in-out;
+}
+
+.esq{
+    animation: daEsquerda .4s ease-in-out;
+}
+
+.conta{
+    font-family: 'manrope';
+     color: white;
+     font-size: 20px;
+     a{
+        text-decoration: none;
+     }
+}
+
+.submit{
+    font-family: 'inter';
+    font-size: 28px;
+    font-weight: 700;
+    padding: 2vh 2vw;
+    border: none;
+    border-radius: 15px;
+    color: white;
+    background: linear-gradient(45deg, #207F70, #00E6A6);
+    animation: surgir .7s ease-in;
+}
+
+.submit:hover{
+    transition: .2s ease;
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 0 5px 0.5px #00E6A6;
+}
+.impedicao {
+    display: none;
+    place-self: center;
+    align-self: center;
+    position: absolute;
+    width: 90%;
+    height: fit-content;
+}
+
+.cartao {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s ease;
+}
+
+.frente,.tras {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.frente {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+.tras {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.tras .titulo {
+    font-family: 'manrope';
+    font-size: 3rem;
+    font-weight: 800;
+    color: white;
+    animation: surgir .5s;
+}
+
+#bvindo {
+    font-size: 50px;
+}
+/* Animações */
+
+@keyframes surgir {
+    from{
+        filter: blur(10px);
+        opacity: 0;
+        scale: 0.5;
+    }
+    to{
+        filter: blur(0);
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+@keyframes daDireita{
+    from{
+        transform: translateX(-10vw);
+        opacity: 0;
+        filter: blur(40px);
+    }
+    to{
+        translateX: 0vw;
+        opacity: 1;
+        filter: blur();
+    }
+}
+
+@keyframes daEsquerda{
+    from{
+        transform: translateX(10vw);
+        opacity: 0;
+        filter: blur(40px);
+    }
+    to{
+        translateX: 0vw;
+        opacity: 1;
+        filter: blur();
+    }
+}
+
+@keyframes seta{
+    from{
+        transform: translateX(20vh);
+        filter: blur(40px);
+    }
+
+    to{
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes piscar{
+
+    25%{opacity: 0;}
+    50%{opacity: 1;}
+    60%{opacity: 0;}
+    70%{opacity: 1;}
+    100%{opacity: 1;}
+}
+@keyframes girar{
+    from{transform: rotateY('0deg');}
+    to{transform: rotateY('180deg');}
+}
+/* Fonts */
+
+@font-face {
+    font-family: 'manrope';
+    src: url(../assets/fonts/Manrope-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: 'inter';
+    src: url(../assets/fonts/Inter-VariableFont_opsz\,wght.ttf);
+}
+@media screen and (max-width:1024px){
+    main{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.8s ease;
+        align-items: center;
+        
+    }
+
+    .esquerda{
+        position: absolute;
+        backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .logo{
+        z-index: 99;
+    }
+    .direita{
+        position: absolute;
+        backface-visibility: hidden;
+        transform: rotateY(180deg);
+        display: flex;
+    }
+    }
+

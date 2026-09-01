@@ -32,8 +32,8 @@
             <div class="form">
 
                 <label class="campos esq">
-                    <span class="campo">Email:</span>
-                    <input type="email" id="email_input" placeholder="Digite seu email..">
+                    <span class="campo">CNPJ:</span>
+                    <input type="text" id="cnpj_input" placeholder="Digite seu CNPJ..">
                 </label>
                 <label class="campos dir">
                     <span class="campo">Senha:</span>
@@ -52,38 +52,38 @@
 <script src="animations.js"></script>
 
 <script>
-  if(window.innerWidth<=1024){
-  function virar() {
-    gira.style.transform = "rotateY(180deg)";
-  }
-}
+    if (window.innerWidth <= 1024) {
+        function virar() {
+            gira.style.transform = "rotateY(180deg)";
+        }
+    }
 
     function entrar() {
-     /*    aguardar(); */
+        /*    aguardar(); */
 
-        var emailVar = email_input.value;
+        var cnpjVar = cnpj_input.value;
         var senhaVar = senha_input.value;
 
-        if (emailVar == "" || senhaVar == "") {
+        if (cnpjVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-          /*   finalizarAguardar(); */
+            mensagem_erro.innerHTML = "Preencha todos os campos";
+            /*   finalizarAguardar(); */
             return false;
         }
-       /*  else {
-            setInterval(sumirMensagem, 5000)
-        } */
+        /*  else {
+             setInterval(sumirMensagem, 5000)
+         } */
 
-        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM LOGIN: ", cnpjVar);
         console.log("FORM SENHA: ", senhaVar);
 
-        fetch("/usuarios/autenticar", {
+        fetch("/empresas/autenticar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                emailServer: emailVar,
+                cnpjServer: cnpjVar,
                 senhaServer: senhaVar
             })
         }).then(function (resposta) {
@@ -95,9 +95,10 @@
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
+              
+                    sessionStorage.ID_EMPRESA = json.id;
+                    sessionStorage.CNPJ_EMPRESA = json.cnpj;
+                    sessionStorage.NOME_FANTASIA = json.nomeFantasia;
 
                     setTimeout(function () {
                         window.location = "./dashboard/cards.html";
@@ -111,7 +112,7 @@
 
                 resposta.text().then(texto => {
                     console.error(texto);
-              /*       finalizarAguardar(texto); */
+                    /*       finalizarAguardar(texto); */
                 });
             }
 
@@ -121,9 +122,9 @@
 
         return false;
     }
-/* 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    } */
+    /* 
+        function sumirMensagem() {
+            cardErro.style.display = "none"
+        } */
 
 </script>
