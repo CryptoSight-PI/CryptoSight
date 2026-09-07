@@ -184,6 +184,14 @@ header {
     animation-range: 0 90vh;
 }
 
+.btnLoginEmpresa {
+    position: fixed;
+    z-index: 999;
+    animation: surgir3 linear forwards;
+    animation-timeline: scroll();
+    animation-range: 0 90vh;
+}
+
 .login:hover {
     transition: .2s ease;
     cursor: pointer;
@@ -646,7 +654,7 @@ header {
     transition: all .2s;
     animation: delado 2s linear forwards;
     animation-timeline: view();
-    animation-range: cover 0% cover 20%;
+    animation-range: cover 0% cover 30%;
 }
 
 .solucao:hover {
@@ -659,7 +667,7 @@ header {
     background-color: #035145;
     animation: deladoD 2s linear forwards;
     animation-timeline: view();
-    animation-range: cover 0% cover 20%;
+    animation-range: cover 0% cover 30%;
 }
 
 .tituloSolu {
@@ -716,7 +724,7 @@ header {
     flex-direction: column;
     margin-top: 10vh;
     margin-bottom: 30px;
-    height: fit-content;
+    height: 100vh;
     width: 100vw;
 }
 
@@ -844,7 +852,7 @@ header {
     height: 80vh;
     width: 50%;
     top: 50%;
-    transform: translate(95%, -50%);
+    transform: translate(82%, -50%);
     background: radial-gradient(circle, #09483f 30%, transparent 70%);
 }
 
@@ -1377,14 +1385,35 @@ footer {
 
     70% {
         opacity: 1;
-        transform: translate(35vw, -10vh);
+        transform: translate(40vw, -10vh);
     }
 
     100% {
-        transform: translate(35vw, 0vh);
+        transform: translate(40vw, 0vh);
     }
 }
 
+@keyframes surgir3 {
+    0% {
+        opacity: 0;
+        transform: translate(35vw, -40vh);
+    }
+
+    50% {
+        cursor: default;
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+        transform: translate(28vw, -10vh);
+    }
+
+    100% {
+        transform: translate(28vw, 0vh);
+    }
+}
 /* Uniobn */
 
 .quadrados {
@@ -1651,6 +1680,49 @@ footer {
             font-size: 50px;
         }
     }
+
+    @keyframes surgir2 {
+    0% {
+        opacity: 0;
+        transform: translate(35vw, -40vh);
+    }
+
+    50% {
+        cursor: default;
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+        transform:scale(0.55) translate(60vw, -10vh);
+    }
+
+    100% {
+        transform: scale(0.55) translate(60vw, 0vh);
+    }
+}
+
+@keyframes surgir3 {
+    0% {
+        opacity: 0;
+        transform:  translate(35vw, -40vh);
+    }
+
+    50% {
+        cursor: default;
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(0.55) translate(28vw, -10vh);
+    }
+
+    100% {
+        transform: scale(0.55) translate(28vw, 0vh);
+    }}
 
     .slogan {
         position: relative;
@@ -1963,7 +2035,7 @@ footer {
 
     .maquinas {
         width: 100%;
-        height: auto;
+        height: 100%;
         min-height: 700px;
         display: flex;
         flex-direction: column;
@@ -2190,6 +2262,49 @@ footer {
             font-size: 30px;
         }
     }
+
+    @keyframes surgir2 {
+    0% {
+        opacity: 0;
+        transform: translate(35vw, -40vh);
+    }
+
+    50% {
+        cursor: default;
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+        transform:scale(0.55) translate(60vw, -10vh);
+    }
+
+    100% {
+        transform: scale(0.55) translate(60vw, 0vh);
+    }
+}
+
+@keyframes surgir3 {
+    0% {
+        opacity: 0;
+        transform:  translate(35vw, -40vh);
+    }
+
+    50% {
+        cursor: default;
+        pointer-events: none;
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 1;
+        transform: scale(0.55) translate(28vw, -10vh);
+    }
+
+    100% {
+        transform: scale(0.55) translate(28vw, 0vh);
+    }}
 
     .slogan {
         width: 90%;
@@ -2420,3 +2535,4 @@ footer {
         height: 350px;
     }
 }
+
