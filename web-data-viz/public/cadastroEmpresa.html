@@ -5,11 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/cadstyle.css">
-  <link rel="icon" href="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png">
+  <link rel="icon" href="./assets/imgs/Sem título-1.svg">
   <title>Cadastro</title>
 </head>
 
-<body>
+<body onload="listar()">
   <div class="quadrados">
     <div class="union">
       <img src="./assets/imgs/Union.png" alt="" class="union-normal">
@@ -23,7 +23,7 @@
         <img src="./assets/imgs/seta.png" alt="">
       </div>
       <div class="logo" onclick="virar()">
-        <img src="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png" alt=""
+        <img src="./assets/imgs/Sem título-1.svg" alt=""
           class="icone">
         <div class="crypto">CryptoSight</div>
       </div>
@@ -64,13 +64,13 @@
             <span class="campo">Cep:</span>
             <input id="cep_input" type="text" placeholder="Digite o CEP" />
           </label>
-          <label class="campos dir">
-            <span class="campo">Estado:</span>
-            <select id="uf_input">
-              <option value="">Selecione</option>
-            </select>
-          </label>
-          <label class="campos dir">
+         <label class="campos dir">
+              <span class="campo">Estado:</span>
+              <select id="uf_input">
+                <option value="" disabled selected hidden>Selecione</option>
+              </select>
+            </label>
+            <label class="campos dir">
             <span class="campo">Cidade:</span>
             <input id="cidade_input" type="text" placeholder="Digite a Cidade" />
           </label>
@@ -102,7 +102,7 @@
             </label>
           </label>
           <div class="conta">Já possui uma <a href="login.html">conta</a>?</div>
-          <button class="submit" onclick="cadastrar()">CADASTRAR</button>
+          <button class="submit" onclick="cadastrarEmpresa()">CADASTRAR</button>
         </div>
       </div>
     </main>
@@ -160,23 +160,23 @@
       logradouroVar.trim() == "" ||
       numeroVar.trim() == ""
     ) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "Preencha todos s campos obrigatórios ";
+      // cardErro.style.display = "block";
+      // mensagem_erro.innerHTML = "Preencha todos os campos obrigatórios ";
 
-      finalizarAguardar();
+      
       return;
 
     } else if (razaoSocialVar.trim().length < 5) {
 
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "Razão Social deve possuir no mínimo 5 caracteres";
+      // cardErro.style.display = "block";
+      // mensagem_erro.innerHTML = "Razão Social deve possuir no mínimo 5 caracteres";
 
       return;
 
     } else if (telefoneVar.length != 11 || isNaN(telefoneVar)) {
 
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "Telefone inválido";
+      // cardErro.style.display = "block";
+      // mensagem_erro.innerHTML = "Telefone inválido";
       return;
 
     } else if (!(arroba_antes_ponto_com &&
@@ -184,44 +184,44 @@
       indice_ponto_com > -1 &&
       termina_em_ponto_com)) {
 
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "Email inválido";
+      // cardErro.style.display = "block";
+      // mensagem_erro.innerHTML = "Email inválido";
       return;
 
     } else if (nomeFantasiaVar.trim().length < 3) {
 
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "Nome Fantasia deve possuir no mínimo 3 caracteres";
+      // cardErro.style.display = "block";
+      // mensagem_erro.innerHTML = "Nome Fantasia deve possuir no mínimo 3 caracteres";
       return;
 
     } else if (cnpjVar.length != 14 || isNaN(cnpjVar)) {
 
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "CNPJ inválido";
+      // cardErro.style.display = "block";
+      // mensagem_erro.innerHTML = "CNPJ inválido";
       return;
 
     } else if (senhaVar.length < 6) {
 
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "Senha inválida: Mínimo 6 caracteres";
+      // cardErro.style.display = "block";
+      // mensagem_erro.innerHTML = "Senha inválida: Mínimo 6 caracteres";
       return;
 
     } else if (senhaVar != confirmacaoSenhaVar) {
 
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "As senhas precisam estar iguais";
+      // cardErro.style.display = "block";
+      // mensagem_erro.innerHTML = "As senhas precisam estar iguais";
       return;
 
     } else if (cepVar.length != 8 || isNaN(cepVar)) {
 
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "CEP inválido";
+      // cardErro.style.display = "block";
+      // mensagem_erro.innerHTML = "CEP inválido";
       return;
 
     } else if (!sede_sim.checked && !sede_nao.checked) {
 
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML = "Selecione se o endereço é sede ou não.";
+      // cardErro.style.display = "block";
+      // mensagem_erro.innerHTML = "Selecione se o endereço é sede ou não.";
       return;
 
     }
@@ -259,10 +259,10 @@
 
         if (resposta.ok) {
 
-          cardErro.style.display = "block";
+          // cardErro.style.display = "block";
 
-          mensagem_erro.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+          // mensagem_erro.innerHTML =
+            // "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
           setTimeout(() => {
             window.location = "loginEmpresa.html";
@@ -273,8 +273,8 @@
 
           return resposta.json().then(function (dados) {
 
-            cardErro.style.display = "block";
-            mensagem_erro.innerHTML = dados.mensagem;
+            // cardErro.style.display = "block";
+            // mensagem_erro.innerHTML = dados.mensagem;
 
           });
 
@@ -284,7 +284,7 @@
       .catch(function (erro) {
 
         console.log(`#ERRO: ${erro}`);
-        finalizarAguardar();
+
 
       });
 
@@ -310,6 +310,6 @@
   }
 
   function sumirMensagem() {
-    cardErro.style.display = "none";
+    // cardErro.style.display = "none";
   }
 </script>
