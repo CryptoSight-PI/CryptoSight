@@ -1054,8 +1054,9 @@ model-viewer {
 .cards-carrossel::scroll-button(left) {
     content: "→";
     border: none;
-    background-color: #035145;
-    font-size: 20pt;
+    background-color: #00E6A6;
+    color: white;
+    font-size: 32pt;
     height: 60px;
     width: 60px;
     border-radius: 50%;
