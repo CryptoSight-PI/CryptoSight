@@ -136,4 +136,8 @@ INSERT INTO uf (nome, sigla) VALUES
 ('Tocantins', 'TO');
 
 insert into empresa (razao_social, senha, telefone, email, nome_fantasia, cnpj) values
-('cryptosight LTDA','1234','11987654321', 'crypto@sight.com' ,'CryptoSight', 1234567891011);
+('cryptosight LTDA','1234','11987654321', 'crypto@sight.com' ,'CryptoSight', 12345678910110);
+
+select * from empresa;
+select * from endereco;
+select * from usuario;
