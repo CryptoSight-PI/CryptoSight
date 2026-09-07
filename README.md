@@ -1,3 +1,7 @@
 CryptoSight
 
-A CryptoSight faz parte de um projeto de segundo semestre para faculdade, onde o objetivo principal é criar um sistema onde monitore os componentes do hardware (CPU, RAM, disco, GPU e tempo de upload e download) 
+A CryptoSight foi feita o objetivo principal é criar um sistema onde monitore os componentes do hardware (CPU, RAM, disco, GPU e tempo de upload e download) de uma mineradora de criptomoedas, e aqui é o repositório onde contém:
+
+- Arquivos python para captura de dados
+- Arquivos do site/banco de dados
+- Arquivos .jar para alertas
