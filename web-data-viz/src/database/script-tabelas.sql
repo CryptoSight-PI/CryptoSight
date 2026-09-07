@@ -53,6 +53,14 @@ create table usuario (
     constraint fk_usuario_empresa foreign key (id_empresa) references empresa(id)
 );
 
+create table usuario_farm(
+	id int auto_increment primary key,
+    id_usuario int not null,
+    id_farm int not null,
+    constraint fk_usuario_farm_usuario foreign key(id_usuario) references usuario(id),
+    constraint fk_usuario_farm_farm foreign key(id_farm) references farm(id)
+);
+
 create table maquina (
     id int auto_increment primary key,
     mac_address char(17) not null unique,
@@ -89,8 +97,10 @@ create table alerta (
     descricao varchar(255),
     severidade varchar(20) not null,
     valor_detectado decimal(10,2),
-    data_hora datetime not null,
-    status varchar(20) not null,
+    data_hora_detectado datetime not null,
+    status varchar(10) not null, 
+    data_hota_resolvido datetime null,
+    constraint chk_status check (status in('resolvido', 'a resolver')),
     constraint fk_alerta_mc foreign key (id_mc) references maquina_componente
     (id)
 );
