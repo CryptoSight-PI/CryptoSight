@@ -90,17 +90,6 @@
             <span class="campo">Complemento:</span>
             <input id="complemento_input" type="text" placeholder="Opcional" />
           </label>
-          <label class="campos2 dir">
-            <span class="campo">Sede:</span>
-            <label>
-              <input id="sede_sim" type="radio" name="sede" value="1">
-              Sim
-            </label>
-            <label>
-              <input id="sede_nao" type="radio" name="sede" value="0">
-              Não
-            </label>
-          </label>
           <div class="conta">Já possui uma <a href="loginEmpresa.html">conta</a>?</div>
           <button class="submit" onclick="cadastrarEmpresa()">CADASTRAR</button>
         </div>
@@ -130,19 +119,12 @@
     var logradouroVar = logradouro_input.value;
     var numeroVar = numero_input.value;
     var complementoVar = complemento_input.value;
-    var sedeVar;
+    var sedeVar = 1;
 
     let indice_ponto_com = emailVar.indexOf(".com");
     let indice_arroba = emailVar.indexOf("@");
     let arroba_antes_ponto_com = indice_arroba < indice_ponto_com - 1;
     let termina_em_ponto_com = emailVar.endsWith(".com");
-
-    if (sede_sim.checked) {
-      sedeVar = 1;
-    } else if (sede_nao.checked) {
-      sedeVar = 0;
-    }
-
 
     // Verificando se há algum campo em branco
     if (

@@ -4,6 +4,9 @@
     margin: 0;
 }
 
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     width: 100%;
@@ -1613,8 +1616,29 @@ footer {
     src: url(../assets/fonts/Inter-VariableFont_opsz\,wght.ttf);
 }
 
+#trocar2 {
+    display: none !important;
+}
+
 /*Media*/
 @media (max-width: 1024px) {
+    #trocar {
+        display: none !important;
+    }
+
+    #trocar2 {
+        display: flex !important;
+    }
+
+    .crypto {
+        font-size: 20px !important;
+    }
+
+    .logo img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
     body {
         width: 100%;
         min-width: 0;

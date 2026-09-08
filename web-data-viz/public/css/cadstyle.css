@@ -97,6 +97,7 @@ main{
     gap: 2vw;
     img{
         animation: surgir .2s;
+        width: 80px;
     }
     .crypto{
 
@@ -140,7 +141,6 @@ main{
 
 .form{
     overflow: scroll;
-    -ms-overflow-style: none;
     scrollbar-width: none;
     display: flex;
     flex-direction: column;
@@ -328,6 +328,10 @@ main{
     @media screen and (max-width:1024px){
     main::-webkit-scrollbar {
         display: none;
+    }
+
+    input {
+        width: 70vw !important;
     }
 
     main{
