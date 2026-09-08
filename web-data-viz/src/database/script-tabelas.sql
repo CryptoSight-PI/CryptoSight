@@ -24,6 +24,7 @@ create table endereco(
 create table empresa(
 	id int auto_increment primary key,
     razao_social varchar(60),
+    senha varchar(255) not null,
     telefone char(11),
    	email varchar(70) not null unique,
     nome_fantasia varchar(50),
@@ -52,9 +53,17 @@ create table usuario (
     constraint fk_usuario_empresa foreign key (id_empresa) references empresa(id)
 );
 
+create table usuario_farm(
+	id int auto_increment primary key,
+    id_usuario int not null,
+    id_farm int not null,
+    constraint fk_usuario_farm_usuario foreign key(id_usuario) references usuario(id),
+    constraint fk_usuario_farm_farm foreign key(id_farm) references farm(id)
+);
+
 create table maquina (
     id int auto_increment primary key,
-    mac_adress char(17) not null unique,
+    mac_address char(17) not null unique,
     modelo varchar(50) not null,
     fabricante varchar(50) not null,
     tipo varchar(20) not null,
@@ -73,7 +82,8 @@ create table maquina_componente(
 	id int auto_increment primary key,
     id_maquina int,
     id_componente int,
-    limite double,
+    limite_max double,
+    limite_min double,
     monitorado bit,
      constraint fk_mc_maquina foreign key (id_maquina) references maquina(id),
      constraint fk_mc_componente foreign key (id_componente) references componente(id)
@@ -87,8 +97,10 @@ create table alerta (
     descricao varchar(255),
     severidade varchar(20) not null,
     valor_detectado decimal(10,2),
-    data_hora datetime not null,
-    status varchar(20) not null,
+    data_hora_detectado datetime not null,
+    status varchar(10) not null, 
+    data_hota_resolvido datetime null,
+    constraint chk_status check (status in('resolvido', 'a resolver')),
     constraint fk_alerta_mc foreign key (id_mc) references maquina_componente
     (id)
 );
@@ -123,5 +135,9 @@ INSERT INTO uf (nome, sigla) VALUES
 ('Sergipe', 'SE'),
 ('Tocantins', 'TO');
 
-insert into empresa (razao_social, telefone, email, nome_fantasia, cnpj) values
-('cryptosight LTDA','11987654321', 'crypto@sight.com' ,'CryptoSight', 1234567891011);
+insert into empresa (razao_social, senha, telefone, email, nome_fantasia, cnpj) values
+('cryptosight LTDA','1234','11987654321', 'crypto@sight.com' ,'CryptoSight', 12345678910110);
+
+select * from empresa;
+select * from endereco;
+select * from usuario;

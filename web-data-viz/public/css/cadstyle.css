@@ -115,27 +115,36 @@ main{
     justify-content: space-between;
     padding: 5vh 0;
     justify-content: center;
+    
     .titulo{
         font-family: 'manrope';
         font-size: 3rem;
         font-weight: 800;
         color: white;
         animation: surgir .5s;
+        margin-bottom: 20px;
     }
     #bvindo{
         font-size: 64px;
     }
 }
 
+
+
 #titulo{
     padding-bottom: 4vh;
 }
+.form::-webkit-scrollbar {
+    display: none;
+}
 
 .form{
+    overflow: scroll;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     height: 75vh;
     gap: 1.6vh;
     padding-bottom: 5vh;
@@ -143,15 +152,15 @@ main{
 
 .campos{
     display: flex;
-    align-items: center;
     flex-direction: column;
     font-family: 'manrope';
     font-size: 20px;
     font-weight: 800;
     color: white;
-    gap: 0.5vh;
+    gap: 1vh;
     .campo{
         padding-left: 1vw;
+        width: 35vw;
     }
     input{
         padding-left: 1vw;
@@ -170,8 +179,35 @@ main{
         transition: .1s ease-in-out;
         transform: scale(1.03);
     }
+    select{
+        padding-left: 1vw;
+        outline: none;
+        border:2px solid #207F70 ;
+        border-radius: 18px;
+        background-color: #1F1F1F;
+        height: 6.5vh;
+        width: 35vw;
+        font-family: 'manrope';
+        font-size: 20px;
+        font-weight: 800;
+        color: white;
+    }
+    select:focus{
+        transition: .1s ease-in-out;
+        transform: scale(1.03);
+    }
 }
-
+.campos2{
+    display: flex;
+    font-family: 'manrope';
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    gap: 0.5vh;
+    .campo{
+        padding-left: 1vw;
+    }
+}
 .dir{
     animation: daDireita .4s ease-in-out;
 }
@@ -179,6 +215,7 @@ main{
 .esq{
     animation: daEsquerda .4s ease-in-out;
 }
+
 
 .conta{
     font-family: 'manrope';
@@ -199,6 +236,7 @@ main{
     color: white;
     background: linear-gradient(45deg, #207F70, #00E6A6);
     animation: surgir .7s ease-in;
+
 }
 
 .submit:hover{
@@ -207,51 +245,6 @@ main{
     transform: scale(1.05);
     box-shadow: 0 0 5px 0.5px #00E6A6;
 }
-.impedicao {
-    display: none;
-    place-self: center;
-    align-self: center;
-    position: absolute;
-    width: 90%;
-    height: fit-content;
-}
-
-.cartao {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    transform-style: preserve-3d;
-    transition: transform 0.8s ease;
-}
-
-.frente,.tras {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-}
-
-.frente {
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-}
-
-.tras {
-    transform: rotateY(180deg);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.tras .titulo {
-    font-family: 'manrope';
-    font-size: 3rem;
-    font-weight: 800;
-    color: white;
-    animation: surgir .5s;
-}
-
 #bvindo {
     font-size: 50px;
 }
@@ -331,34 +324,53 @@ main{
     font-family: 'inter';
     src: url(../assets/fonts/Inter-VariableFont_opsz\,wght.ttf);
 }
-@media screen and (max-width:1024px){
+    
+    @media screen and (max-width:1024px){
+    main::-webkit-scrollbar {
+        display: none;
+    }
+
     main{
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        overflow: scroll;
         display: flex;
         flex-direction: column;
-        position: relative;
-        width: 100%;
-        height: 100%;
-        transform-style: preserve-3d;
-        transition: transform 0.8s ease;
-        align-items: center;
-        
-    }
+        }
+    .quadrados{
+            display: none;
+        }
 
-    .esquerda{
-        position: absolute;
-        backface-visibility: hidden;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
-    .logo{
-        z-index: 99;
-    }
-    .direita{
-        position: absolute;
-        backface-visibility: hidden;
-        transform: rotateY(180deg);
-        display: flex;
-    }
-    }
+    /*@media screen and (max-width:430px){
+        main{
+            display: flex;
+            flex-direction: column;
+            position: relative;
 
+            transform-style: preserve-3d;
+            transition: transform 0.8s ease;
+            align-items: center;
+            
+        }
+    
+        .esquerda{
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .logo{
+            z-index: 99;
+        }
+        .direita{
+            padding-left: 75px;
+            position: absolute;
+            backface-visibility: hidden;
+            transform: rotateY(180deg);
+            display: flex;
+            justify-items: center;
+            
+        }
+    }*/

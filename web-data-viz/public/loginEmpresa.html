@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/cadstyle.css">
-    <link rel="icon" href="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png">
+    <link rel="icon" href="./assets/imgs/logo.png">
     <title>Login</title>
 </head>
 
@@ -22,7 +22,7 @@
                 <img src="./assets/imgs/seta.png" alt="">
             </div>
             <div class="logo" onclick="virar()">
-                <img src="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png" alt=""
+                <img src="./assets/imgs/logo.png" alt=""
                     class="icone">
                 <div class="crypto">CryptoSight</div>
             </div>
@@ -39,7 +39,7 @@
                     <span class="campo">Senha:</span>
                     <input type="password" id="senha_input" placeholder="Digite sua senha..">
                 </label>
-                <div class="conta">Ainda não possui uma <a href="cadastro.html">conta</a>?</div>
+                <div class="conta">Ainda não possui uma <a href="cadastroEmpresa.html">conta</a>?</div>
 
                 <button class="submit" onclick="entrar()">ENTRAR</button>
             </div>
@@ -101,7 +101,7 @@
                     sessionStorage.NOME_FANTASIA = json.nomeFantasia;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "cadastro.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

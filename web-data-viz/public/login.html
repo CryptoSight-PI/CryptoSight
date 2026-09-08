@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/cadstyle.css">
-    <link rel="icon" href="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png">
+    <link rel="icon" href="./assets/imgs/logo.png">
     <title>Login</title>
 </head>
 
@@ -22,7 +22,7 @@
                 <img src="./assets/imgs/seta.png" alt="">
             </div>
             <div class="logo" onclick="virar()">
-                <img src="./assets/imgs/ChatGPT_Image_11_de_ago._de_2026__13_30_37-removebg-preview(1) 2.png" alt=""
+                <img src="./assets/imgs/logo.png" alt=""
                     class="icone">
                 <div class="crypto">CryptoSight</div>
             </div>
@@ -30,6 +30,7 @@
         <div class="direita">
             <div class="titulo" id="bvindo">Bem-vindo de volta</div>
             <div class="form">
+                <div id="mensagem"></div>
 
                 <label class="campos esq">
                     <span class="campo">Email:</span>
@@ -39,7 +40,7 @@
                     <span class="campo">Senha:</span>
                     <input type="password" id="senha_input" placeholder="Digite sua senha..">
                 </label>
-                <div class="conta">Ainda não possui uma <a href="cadastro.html">conta</a>?</div>
+                <div class="conta">Ainda não possui uma <a href="loginEmpresa.html">conta</a>?</div>
 
                 <button class="submit" onclick="entrar()">ENTRAR</button>
             </div>
@@ -59,20 +60,14 @@
 }
 
     function entrar() {
-     /*    aguardar(); */
 
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
 
         if (emailVar == "" || senhaVar == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-          /*   finalizarAguardar(); */
+            mensagem.innerHTML = "Preencha todos os campos";
             return false;
         }
-       /*  else {
-            setInterval(sumirMensagem, 5000)
-        } */
 
         console.log("FORM LOGIN: ", emailVar);
         console.log("FORM SENHA: ", senhaVar);
@@ -100,18 +95,20 @@
                     sessionStorage.ID_USUARIO = json.id;
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "dashboard.html";
                     }, 1000); // apenas para exibir o loading
 
                 });
 
             } else {
 
+                mensagem.innerHTML = "E-mail ou senha inválidos";
+                
                 console.log("Houve um erro ao tentar realizar o login!");
 
                 resposta.text().then(texto => {
                     console.error(texto);
-              /*       finalizarAguardar(texto); */
+          
                 });
             }
 
@@ -121,9 +118,5 @@
 
         return false;
     }
-/* 
-    function sumirMensagem() {
-        cardErro.style.display = "none"
-    } */
 
 </script>
