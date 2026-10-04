@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@100;200;300;400;600;700;800;900&family=Inter:ital,wght@0,100..900;1,100..900&family=Play:wght@400;700&family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -85,7 +88,7 @@ header {
     position: relative;
     text-decoration: none;
     color: white;
-    font-family: 'manrope';
+    font-family: 'Space Mono';
     font-size: 18px;
     font-weight: 700;
     letter-spacing: 0.5px;
@@ -141,7 +144,7 @@ header {
 }
 
 .juntar {
-    font-family: 'inter';
+    font-family: 'Space Mono';
     font-size: 28px;
     font-weight: 700;
     padding: 2vh 2vw;
@@ -169,7 +172,7 @@ header {
 }
 
 .login {
-    font-family: 'inter';
+    font-family: 'Space Mono';
     font-size: 18px;
     font-weight: 700;
     padding: 1.5vh 1.5vw;
@@ -231,7 +234,7 @@ header {
     }
 
     .crypto {
-        font-family: 'manrope';
+        font-family: 'Manrope';
         font-weight: 800;
         font-size: 80px;
         color: white;
@@ -248,7 +251,7 @@ header {
     left: 20vw;
     bottom: 41vh;
     width: 30vw;
-    font-family: 'manrope';
+    font-family: 'Inter';
     font-weight: 600;
     font-size: 30px;
     color: white;
@@ -266,14 +269,14 @@ header {
 
 .primeira {
     margin-top: 100vh;
+    padding: 5% 10%;
     height: fit-content;
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    justify-content: space-around;
 }
 
 .entender {
-    padding: 10% 15%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -287,7 +290,7 @@ header {
 }
 
 .titulo {
-    font-family: 'inter';
+    font-family: 'IBM Plex Sans';
     font-weight: 900;
     font-size: 50pt;
     background: linear-gradient(45deg, #207F70, #00E6A6, #207F70, #207F70);
@@ -298,21 +301,21 @@ header {
 }
 
 .oqe {
-    font-family: 'manrope';
+    font-family: 'Inter';
     color: white;
     font-size: 18pt;
 }
 
 
 .oqeGradiente {
-    font-weight: 700;
+    font-weight: bold;
     background: linear-gradient(140deg, #7fded0, #207F70, #94c2bb);
     background-clip: text;
     color: transparent;
 }
 
 .metodos {
-    padding-right: 2vw;
+    margin: 5% 0% 0% 10%;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -323,7 +326,7 @@ header {
 }
 
 .tituloMetodos {
-    font-family: 'manrope';
+    font-family: 'IBM Plex Sans';
     color: white;
     font-size: 20pt;
     font-weight: 600;
@@ -333,7 +336,7 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3vw;
-    height: 70%;
+    height: 100%;
     max-height: 70%;
     width: 100%;
 }
@@ -419,19 +422,20 @@ header {
 }
 
 .powTitle {
-    font-family: 'inter';
+    font-family: 'IBM Plex Sans';
     font-weight: 800;
     font-size: 30pt;
     color: #00E6A6;
     text-shadow: 0 0 12px #207F70;
+    margin: 5% 0 0 0;
 }
 
 .powDescricao {
     text-align: center;
-    font-family: 'inter';
+    font-family: 'Inter';
     font-weight: 600;
     font-size: 16pt;
-    padding: 0 3vw;
+    padding: 0vh 3vw 3vh 3vw;
     background: linear-gradient(140deg, #e1f3f0, #69cabb, #94c2bb);
     background-clip: text;
     color: transparent;
@@ -441,7 +445,7 @@ header {
 
 .posTitle {
 
-    font-family: 'inter';
+    font-family: 'IBM Plex Sans';
     font-weight: 800;
     font-size: 30pt;
     color: white;
@@ -450,7 +454,7 @@ header {
 
 .posDescricao {
     text-align: center;
-    font-family: 'inter';
+    font-family: 'Inter';
     font-weight: 600;
     font-size: 16pt;
     padding: 0 3vw;
@@ -463,11 +467,23 @@ header {
     position: relative;
     display: flex;
     align-items: center;
-    padding-right: 24vw;
+    width: 100vw;
+    margin-bottom: 5%;
+}
+
+.containerSegunda{
+    display: flex;
+    justify-content: space-around;
+}
+
+.containerBlockchain{
+    display: flex;
+    flex-direction: column;
+    justify-content:left;
 }
 
 .block {
-    font-family: 'inter';
+    font-family: 'Inter';
     background: linear-gradient(140deg, #7fded0, #207F70, #94c2bb);
     background-clip: text;
     color: transparent;
@@ -490,9 +506,9 @@ header {
     color: #cefff8;
     padding: 3%;
     margin-top: 100px;
-    margin-left: 8vw;
+    margin-left: 10vw;
     margin-bottom: 20px;
-    font-family: 'inter';
+    font-family: 'Inter';
     font-weight: 700;
     font-size: 13pt;
     position: relative;
@@ -553,6 +569,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100vw;
     gap: 50vh;
     margin-bottom: 10vh;
     padding-top: 3vh;
@@ -563,7 +580,7 @@ header {
 
 .tituloT {
     position: sticky;
-    font-family: 'inter';
+    font-family: 'IBM Plex Sans';
     font-weight: 900;
     font-size: 50pt;
     background: linear-gradient(140deg, #7fded0, #207F70, #94c2bb);
@@ -588,14 +605,14 @@ header {
 }
 
 .titulo-problema {
-    font-family: 'inter';
+    font-family: 'IBM Plex Sans';
     font-weight: 800;
     font-size: 35pt;
     color: white;
 }
 
 .desc-problema {
-    font-family: 'manrope';
+    font-family: 'Inter';
     font-weight: 600;
     font-size: 20pt;
     color: rgb(255, 255, 255);
@@ -626,12 +643,12 @@ header {
     width: 100%;
     position: relative;
     display: flex;
-
+    padding: 0% 8%;
 }
 
 .tituloSolus {
     z-index: 99;
-    font-family: 'inter';
+    font-family: 'IBM Plex Sans';
     font-weight: 900;
     text-transform: uppercase;
     position: absolute;
@@ -653,7 +670,7 @@ header {
 
 .solucao {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 3fr 1fr;
     transition: all .2s;
     animation: delado 2s linear forwards;
     animation-timeline: view();
@@ -674,7 +691,7 @@ header {
 }
 
 .tituloSolu {
-    font-family: 'inter';
+    font-family: 'IBM Plex Sans';
     font-weight: 800;
     color: white;
     font-size: 30pt;
@@ -697,7 +714,7 @@ header {
 }
 
 .descricaoSolu {
-    font-family: 'manrope';
+    font-family: 'Inter';
     font-weight: 700;
     font-size: 20pt;
     color: white;
@@ -733,7 +750,7 @@ header {
 
 .titulomaquina {
     padding-right: 30vw;
-    font-family: 'inter';
+    font-family: 'IBM Plex Sans';
     font-weight: 800;
     text-transform: uppercase;
     font-size: 60pt;
@@ -783,7 +800,7 @@ header {
 }
 
 .maquinaDescricao {
-    font-family: 'manrope';
+    font-family: 'Inter';
     color: #cefff8;
     font-weight: 700;
     font-size: 20pt;
@@ -815,13 +832,14 @@ header {
 }
 
 .escolher {
-    font-family: 'inter';
+    font-family: 'Space Mono';
     font-weight: 800;
     text-transform: uppercase;
     font-size: 22pt;
     background: #035145;
-    height: 16%;
+    height: fit-content;
     width: 40%;
+    padding: 1px 0 1px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -895,49 +913,49 @@ model-viewer {
     flex-direction: column;
     align-items: center;
     height: fit-content;
-    width: 100%;
+    width: 100vw;
     min-height: 1000px;
     min-width: 100%;
     background: url(../assets/imgs/blur.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    margin: 4% 0;
 }
 
 .sexta-titulo {
     position: absolute;
-    font-family: 'inter';
+    font-family: 'IBM Plex Sans';
     background: linear-gradient(140deg, #7fded0, #207F70, #94c2bb);
     background-clip: text;
     color: transparent;
     font-weight: 900;
     font-size: 50pt;
     z-index: 99;
-    top: -2%;
+    top: 2%;
     left: 5vw;
     text-shadow: none;
     filter: drop-shadow(10px 10px 5px black);
 }
 
 .sexta-desc {
-    margin-top: 8vh;
+    margin-top: 12vh;
     align-self: flex-start;
     margin-left: 10vw;
     padding-right: 30vw;
-    font-family: 'manrope';
+    font-family: 'Inter';
     width: 60%;
     font-size: 22pt;
     color: white;
     font-weight: 600;
+    margin-bottom:  10vh;
 }
 
 .grid-cards {
-    padding: 0 10vw;
+    padding: 10vh 10vw;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    margin-top: 10vh;
-    height: 60vh;
+    height: fit-content;
     width: 100%;
     place-items: center;
 
@@ -948,10 +966,10 @@ model-viewer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 4vh;
+    padding: 4vh 0px;
     overflow: hidden;
     gap: 6vh;
-    height: 40%;
+    height: fit-content;
     width: 80%;
     border-radius: 20px;
     position: relative;
@@ -959,7 +977,11 @@ model-viewer {
 }
 
 .cards-metricas:hover {
-    height: 177%;
+    height: fit-content;
+
+    .descricao-card{
+        display: flex;
+    }
 }
 
 .cards-metricas::before {
@@ -988,7 +1010,7 @@ model-viewer {
 }
 
 .titulo-card {
-    font-family: 'inter';
+    font-family: 'IBM Plex Sans';
     font-weight: 800;
     z-index: 9999;
     font-size: 30pt;
@@ -1000,12 +1022,12 @@ model-viewer {
 }
 
 .descricao-card {
-    font-family: 'inter';
+    display: none;
+    font-family: 'Inter';
     font-weight: 700;
     z-index: 9999;
     font-size: 20pt;
     color: white;
-    display: flex;
     text-align: center;
 
 }
@@ -1020,7 +1042,7 @@ model-viewer {
 }
 
 .titulo-setima {
-    font-family: 'inter';
+    font-family: 'IBM Plex Sans';
     background: linear-gradient(140deg, #7fded0, #207F70, #94c2bb);
     background-clip: text;
     color: transparent;
@@ -1129,7 +1151,7 @@ footer {
     position: absolute;
     bottom: 1vh;
     right: 1vw;
-    font-family: 'inter';
+    font-family: 'Inter';
     font-weight: 600;
     font-size: 24pt;
     color: white;
@@ -1143,7 +1165,7 @@ footer {
     gap: 3vh;
 
     h3 {
-        font-family: 'manrope';
+        font-family: 'Manrope';
         font-weight: 1000;
         font-size: 30pt;
         color: white;
@@ -1151,7 +1173,7 @@ footer {
 }
 
 .sim {
-    font-family: 'inter';
+    font-family: 'Manrope';
     font-size: 28px;
     font-weight: 700;
     padding: 2vh 2vw;
@@ -1317,6 +1339,7 @@ footer {
 
     100% {
         margin-top: 4vh;
+        margin-left: 10vw;
         height: 40px;
     }
 }
@@ -1569,7 +1592,7 @@ footer {
 
 .menu {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .botaomenu {
@@ -1607,12 +1630,12 @@ footer {
 /* Fonts */
 
 @font-face {
-    font-family: 'manrope';
+    font-family: 'Manrope';
     src: url(../assets/fonts/Manrope-VariableFont_wght.ttf);
 }
 
 @font-face {
-    font-family: 'inter';
+    font-family: 'Inter';
     src: url(../assets/fonts/Inter-VariableFont_opsz\,wght.ttf);
 }
 
@@ -1622,6 +1645,10 @@ footer {
 
 /*Media*/
 @media (max-width: 1024px) {
+    .login{
+        display: none !important
+    }
+
     #trocar {
         display: none !important;
     }
@@ -1820,7 +1847,7 @@ footer {
 
     .primeira {
         margin-top: 100vh;
-        width: 100%;
+        width: 100vw;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1981,7 +2008,7 @@ footer {
     }
 
     #quarta {
-        width: 100%;
+        width: 100vw;
         height: auto;
         min-height: 0;
         display: flex;
@@ -2007,7 +2034,7 @@ footer {
 
     .solucao,
     #detec {
-        width: 94%;
+        width: 100%;
         margin: 0 auto;
         display: flex;
         flex-direction: column;
